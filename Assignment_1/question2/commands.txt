@@ -1,0 +1,4 @@
+vi fees.awk
+chmod 755 fees.awk
+./password.awk < RollList.csv > Password.csv
+sed -e 's/^\(..\)\(..\)\(.\)\(...\),\(.*\)$/\1\4 \5 \L\3/g' RollList.csv
