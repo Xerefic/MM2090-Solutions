@@ -4,11 +4,11 @@ BEGIN{
 };
 
 {
-	name[$1]=1;
+	name[$NF]=$0;
 };
 
 END{
 	for (id in name){
-		print id;
+		print name[id];
 	};
 };

@@ -7,7 +7,6 @@ BEGIN{
 {
 	roll = $1;
 	year = int(substr(roll, 3, 2));
-	
 	num[year]++;	
 	
 };

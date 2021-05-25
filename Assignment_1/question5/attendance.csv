@@ -1,39 +1,39 @@
-Roll,Percentage
-me20b001,77.272727
-me20b004,22.727273
-me20b005,86.363636
-me20b008,81.818182
-me20b014,77.272727
-me20b017,81.818182
-me20b020,86.363636
-me20b021,72.727273
-me20b022,9.090909
-me20b024,86.363636
-me20b027,31.818182
-me20b028,100.000000
-me20b029,86.363636
-me20b032,100.000000
-me20b036,95.454545
-me20b050,95.454545
-me20b053,86.363636
-me20b055,40.909091
-me20b088,100.000000
-me20b112,90.909091
-me20b132,86.363636
-me20b150,54.545455
-me20b162,27.272727
-me20b163,100.000000
-me20b166,90.909091
-me20b178,100.000000
-me20b183,100.000000
-mm20b005,50.000000
-mm20b009,4.545455
-mm20b011,27.272727
-mm20b017,86.363636
-mm20b019,95.454545
-mm20b020,81.818182
-mm20b042,81.818182
-mm20b043,59.090909
-mm20b049,77.272727
-mm20b057,81.818182
-mm20b059,77.272727
+Name,Roll,Attendance,Percentage
+Aahan Bhargava, me20b001, 17, 77.272727
+Abhaumika Bijudith, me20b004, 5, 22.727273
+Abheshek Paramanand Kamble, me20b005, 19, 86.363636
+Abhishek Yadav, me20b008, 18, 81.818182
+Aditya Kishore Dhoke, me20b014, 17, 77.272727
+Akhil Koshy Rajesh, me20b017, 18, 81.818182
+Akshat Rakesh Garhwal, me20b020, 19, 86.363636
+Albin George, mm20b005, 11, 50.000000
+Alpha P Jose, me20b021, 16, 72.727273
+Amar Muhammed, me20b022, 2, 9.090909
+Ankit Kumar, me20b024, 19, 86.363636
+Anshid K, me20b027, 7, 31.818182
+Anushka Asit Vadhavkar, me20b028, 22, 100.000000
+Anushka S, me20b029, 19, 86.363636
+Archish S, me20b032, 22, 100.000000
+Arun Palaniappan, me20b036, 21, 95.454545
+Bankar Niranjan Janardan, mm20b009, 1, 4.545455
+Bhagat Singh S, mm20b011, 6, 27.272727
+Cecil Jacob Thomas, me20b050, 21, 95.454545
+Chinmayee Tushar Kolhe, me20b053, 19, 86.363636
+Chris Joy Beck, me20b055, 9, 40.909091
+Divya Jyothi D, mm20b017, 19, 86.363636
+Gatkal Siddhesh Sarjerao, mm20b019, 21, 95.454545
+Gokul C, mm20b020, 18, 81.818182
+Jay Harish Shah, me20b088, 22, 100.000000
+Monisha C, me20b112, 20, 90.909091
+Nayanatara Deepak, mm20b042, 18, 81.818182
+Nedunchezhiyan K, mm20b043, 13, 59.090909
+Prabhat Bedida, me20b132, 19, 86.363636
+Prithviraj Pratap Bhosle, mm20b049, 17, 77.272727
+Rithwin K Ashraf, me20b150, 12, 54.545455
+Shreya Rajesh, mm20b057, 18, 81.818182
+Shrid Suresh, me20b162, 6, 27.272727
+Shriya Shukla, me20b163, 22, 100.000000
+Siddhagavali Shital Bhiku, me20b166, 20, 90.909091
+Sukeerth Ramkumar, me20b178, 22, 100.000000
+Sumanth Manjunath Hegde, mm20b059, 17, 77.272727
+Swapnil Paresh Mehta, me20b183, 22, 100.000000

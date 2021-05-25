@@ -10,12 +10,12 @@ lectures=0;
 for files in `ls attendance/`;
 do
 	lectures=$(( $lectures+1 ));
-	cat attendance/$files | grep -oe '..20b...:' > sorted/$(basename $files .sbv).txt
+	cat attendance/$files | grep -oe '^\(.*\)..20b...:' > sorted/$(basename $files .sbv).txt
 done;
 
 for files in `ls sorted/`;
 do
-	cat sorted/$files | sed -e 's/\(.*\):/\1/g' > sorted/$(basename $files .txt).csv
+	cat sorted/$files | sed -e 's/\(.*\) \(.*\):/\1, \2/g'  > sorted/$(basename $files .txt).csv
 done;
 rm sorted/*.txt
 
@@ -33,7 +33,7 @@ tail -n+1 -q data/*.csv > final.csv
 ./roll.awk < final.csv > cache1.csv
 sort -k1 -n -t, cache1.csv > cache2.csv
 
-cat cache2.csv | awk -v total=$lectures 'BEGIN{printf("Roll,Percentage\n");}{ct=$2/total*100; printf("%s,%f\n", $1, ct);}' > attendance.csv
+cat cache2.csv | awk -v total=$lectures 'BEGIN{printf("Name,Roll,Attendance,Percentage\n");}{ct=$NF/total*100; printf("%s, %f\n", $0, ct);}' > attendance.csv
 
 rm cache1.csv
 rm cache2.csv

@@ -10,6 +10,6 @@ BEGIN{
 
 END{
 	for (id in name){
-		printf("%s, %d\n", data[id], name[id]);
+		print data[id], name[id];
 	};
 };
