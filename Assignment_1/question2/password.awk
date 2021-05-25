@@ -1,6 +1,7 @@
 #!/usr/bin/gawk -f
 BEGIN{
 	FS = ",";
+	printf("Roll,Name,Password\n");
 };
 
 {	
