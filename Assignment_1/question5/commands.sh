@@ -33,7 +33,7 @@ tail -n+1 -q data/*.csv > final.csv
 ./roll.awk < final.csv > cache1.csv
 sort -k1 -n -t, cache1.csv > cache2.csv
 
-cat cache2.csv | awk -v total=$lectures 'BEGIN{printf("Name,Roll,Attendance,Percentage\n");}{ct=$NF/total*100; printf("%s, %.2f\%\n", $0, ct);}' > attendance.csv
+cat cache2.csv | awk -v total=$lectures 'BEGIN{printf("Name,Roll,Attendance,Percentage\n");}{ct=$NF/total*100; printf("%s, %.2f\%\n", $0, ct);}' > Attendance.csv
 
 rm cache1.csv
 rm cache2.csv

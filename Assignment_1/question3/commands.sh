@@ -30,7 +30,7 @@ done;
 
 rm -r cropped/
 
-convert -page A4 -resize 3508x2480 combined/*.png screenshots.pdf
+convert -page A4 -resize 3508x2480 combined/*.png Screenshots.pdf
 
 
 rm -r combined/
