@@ -4,8 +4,9 @@ BEGIN{
 };
 
 {
-	data[$NF]=$0;
-	name[$NF]++;
+	# Counting the number of occurence of each roll number in the combined attendance file
+	data[$1]=$0;
+	name[$1]++;
 };
 
 END{

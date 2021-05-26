@@ -1,39 +1,39 @@
-Name,Roll,Attendance,Percentage
-Aahan Bhargava, me20b001, 17, 77.27%
-Abhaumika Bijudith, me20b004, 5, 22.73%
-Abheshek Paramanand Kamble, me20b005, 19, 86.36%
-Abhishek Yadav, me20b008, 18, 81.82%
-Aditya Kishore Dhoke, me20b014, 17, 77.27%
-Akhil Koshy Rajesh, me20b017, 18, 81.82%
-Akshat Rakesh Garhwal, me20b020, 19, 86.36%
-Albin George, mm20b005, 11, 50.00%
-Alpha P Jose, me20b021, 16, 72.73%
-Amar Muhammed, me20b022, 2, 9.09%
-Ankit Kumar, me20b024, 19, 86.36%
-Anshid K, me20b027, 7, 31.82%
-Anushka Asit Vadhavkar, me20b028, 22, 100.00%
-Anushka S, me20b029, 19, 86.36%
-Archish S, me20b032, 22, 100.00%
-Arun Palaniappan, me20b036, 21, 95.45%
-Bankar Niranjan Janardan, mm20b009, 1, 4.55%
-Bhagat Singh S, mm20b011, 6, 27.27%
-Cecil Jacob Thomas, me20b050, 21, 95.45%
-Chinmayee Tushar Kolhe, me20b053, 19, 86.36%
-Chris Joy Beck, me20b055, 9, 40.91%
-Divya Jyothi D, mm20b017, 19, 86.36%
-Gatkal Siddhesh Sarjerao, mm20b019, 21, 95.45%
-Gokul C, mm20b020, 18, 81.82%
-Jay Harish Shah, me20b088, 22, 100.00%
-Monisha C, me20b112, 20, 90.91%
-Nayanatara Deepak, mm20b042, 18, 81.82%
-Nedunchezhiyan K, mm20b043, 13, 59.09%
-Prabhat Bedida, me20b132, 19, 86.36%
-Prithviraj Pratap Bhosle, mm20b049, 17, 77.27%
-Rithwin K Ashraf, me20b150, 12, 54.55%
-Shreya Rajesh, mm20b057, 18, 81.82%
-Shrid Suresh, me20b162, 6, 27.27%
-Shriya Shukla, me20b163, 22, 100.00%
-Siddhagavali Shital Bhiku, me20b166, 20, 90.91%
-Sukeerth Ramkumar, me20b178, 22, 100.00%
-Sumanth Manjunath Hegde, mm20b059, 17, 77.27%
-Swapnil Paresh Mehta, me20b183, 22, 100.00%
+Roll,Name,Attendance,Percentage
+me20b001, Aahan Bhargava, 17, 77.27%
+me20b004, Abhaumika Bijudith, 5, 22.73%
+me20b005, Abheshek Paramanand Kamble, 19, 86.36%
+me20b008, Abhishek Yadav, 18, 81.82%
+me20b014, Aditya Kishore Dhoke, 17, 77.27%
+me20b017, Akhil Koshy Rajesh, 18, 81.82%
+me20b020, Akshat Rakesh Garhwal, 19, 86.36%
+me20b021, Alpha P Jose, 16, 72.73%
+me20b022, Amar Muhammed, 2, 9.09%
+me20b024, Ankit Kumar, 19, 86.36%
+me20b027, Anshid K, 7, 31.82%
+me20b028, Anushka Asit Vadhavkar, 22, 100.00%
+me20b029, Anushka S, 19, 86.36%
+me20b032, Archish S, 22, 100.00%
+me20b036, Arun Palaniappan, 21, 95.45%
+me20b050, Cecil Jacob Thomas, 21, 95.45%
+me20b053, Chinmayee Tushar Kolhe, 19, 86.36%
+me20b055, Chris Joy Beck, 9, 40.91%
+me20b088, Jay Harish Shah, 22, 100.00%
+me20b112, Monisha C, 20, 90.91%
+me20b132, Prabhat Bedida, 19, 86.36%
+me20b150, Rithwin K Ashraf, 12, 54.55%
+me20b162, Shrid Suresh, 6, 27.27%
+me20b163, Shriya Shukla, 22, 100.00%
+me20b166, Siddhagavali Shital Bhiku, 20, 90.91%
+me20b178, Sukeerth Ramkumar, 22, 100.00%
+me20b183, Swapnil Paresh Mehta, 22, 100.00%
+mm20b005, Albin George, 11, 50.00%
+mm20b009, Bankar Niranjan Janardan, 1, 4.55%
+mm20b011, Bhagat Singh S, 6, 27.27%
+mm20b017, Divya Jyothi D, 19, 86.36%
+mm20b019, Gatkal Siddhesh Sarjerao, 21, 95.45%
+mm20b020, Gokul C, 18, 81.82%
+mm20b042, Nayanatara Deepak, 18, 81.82%
+mm20b043, Nedunchezhiyan K, 13, 59.09%
+mm20b049, Prithviraj Pratap Bhosle, 17, 77.27%
+mm20b057, Shreya Rajesh, 18, 81.82%
+mm20b059, Sumanth Manjunath Hegde, 17, 77.27%

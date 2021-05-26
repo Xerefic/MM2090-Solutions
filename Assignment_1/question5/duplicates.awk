@@ -4,7 +4,8 @@ BEGIN{
 };
 
 {
-	name[$NF]=$0;
+	# Removing more than one instane of each student
+	name[$1]=$0;
 };
 
 END{
