@@ -20,7 +20,18 @@ cd ..
 # Using the wrapper crop.sh to crop the renamed images
 for files in `ls screenshots/`;
 do
-	./crop.sh screenshots/$files 1450 865 1475 40;
+	if [ -z "$1" ]; then
+		width=`identify -ping -format '%w' screenshots/$files`
+		height=`identify -ping -format '%h' screenshots/$files`
+		x=0
+		y=0
+	else
+		width=$1
+		height=$2
+		x=$3
+		y=$4
+	fi
+	convert screenshots/$files -crop $width\x$height+$x+$y cropped/$(basename $files .png).png
 done;
 
 rm -r screenshots/
