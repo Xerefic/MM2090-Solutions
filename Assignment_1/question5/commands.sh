@@ -1,52 +1,59 @@
 #!/bin/bash
 
-# Unzipping the text files
 tar -xvzf mm2090-apr2021-attendance.tar.gz
-mv mm2090-apr2021-attendance/ attendance/
-rm *.csv
+mv mm2090-apr2021-attendance/ transcripts/
 
-mkdir sorted
-
-# Grepping just the name and the roll number from every message
+mkdir registered
 lectures=0;
-for files in `ls attendance/`;
+for files in `ls transcripts/`;
 do
 	lectures=$(( $lectures+1 ));
-	cat attendance/$files | grep -oe '^\(.*\)..20b...:' > sorted/$(basename $files .sbv).txt
+	cat transcripts/$files | grep -oe '^\(.*\)..20b...:' > registered/$(basename $files .sbv).txt
 done;
+rm -r transcripts/
 
+for files in `ls registered/`;
+do
+        cat registered/$files | sed -e 's/\(.*\) \(.*\):/\2,\1/g'  > registered/$(basename $files .txt).csv
+done;
+rm registered/*.txt
+
+
+mkdir cache
+for files in `ls registered/`;
+do
+	cat registered/$files | sed -e 's/ /_/g' > cache/$(basename $files .csv).csv
+done;	
+rm -r registered/
+
+mkdir attendance
+for files in `ls cache/`;
+do
+	cat cache/$files | awk -F, '{name[$1]=$2;}END{for (id in name){printf("%s,%s\n", id, name[id]);}}' | sort -k1 -n > attendance/$(basename $files .csv).csv
+done;
+rm -r cache/
+
+tail -n+1 -q attendance/*.csv | awk -F, '{name[$1]=$2;}END{for (id in name){printf("%s,%s\n", id, name[id]);}}' | sort -k1 -n > registered.csv
+
+tail -n+1 -q attendance/*.csv | awk -F, -v total=$lectures '{data[$1]=$0;name[$1]++;}END{for (id in name){printf("%s,%.2f\%\n", data[id], name[id]/total*100);}}' | sort -k1 -n > attendance.csv
+
+mkdir absent
+for files in `ls attendance/`
+do
+	diff attendance/$files registered.csv | egrep '....b...' | sed 's/> \(.*\)/\1/g' | awk -v lecture=$(basename $files .csv) '{printf("%s,%s\n", $0, lecture)}' > absent/$(basename $files .csv).csv;
+done;	
+rm registered.csv
 rm -r attendance/
 
-# Seperating the name and roll number
-for files in `ls sorted/`;
-do
-	cat sorted/$files | sed -e 's/\(.*\) \(.*\):/\2, \1/g'  > sorted/$(basename $files .txt).csv
-done;
-rm sorted/*.txt
+tail -n+1 -q absent/*.csv | awk -F, '{name[$1]=$2;absent[$1]=absent[$1]$3;}END{for (id in name){printf("%s,%s,%s\n", id, name[id], absent[id]);}}' | sort -k1 -n > absent.csv
+rm -r absent/
 
-# Removing duplicate instances using the wrapper duplicates.awk
-mkdir data
-for files in `ls sorted/`;
-do
-	./duplicates.awk < sorted/$files > data/$(basename $files .csv).csv
-done;
+awk -F, 'NR==FNR {absent[$1]=$3; next}{printf("%s,%s\n", $0, absent[$1]);}' absent.csv attendance.csv > cache.csv
+rm absent.csv
+rm attendance.csv
 
-rm -r sorted/
+cat cache.csv | sed 's/_/ /g' > final.csv
+rm cache.csv
 
-# Combining the attendance data of all classes
-tail -n+1 -q data/*.csv > final.csv
-
-rm -r data/
-
-# Counting the occurence of roll numbers using the wrapper roll.awk
-./roll.awk < final.csv > cache1.csv
-sort -k1 -n -t, cache1.csv > cache2.csv
-
-# Printing the data and percentage of attendance
-cat cache2.csv | awk -v total=$lectures 'BEGIN{printf("Roll,Name,Attendance,Percentage\n");}{ct=$NF/total*100; printf("%s, %.2f\%\n", $0, ct);}' > Attendance.csv
-
-rm cache1.csv
-rm cache2.csv
+awk -F, 'BEGIN{printf("Roll,Name,Percentage,Missed Lectures\n");}{print $0;}' < final.csv > Attendance.csv
 rm final.csv
-
-cat Attendance.csv
