@@ -61,7 +61,7 @@ awk -F, 'NR==FNR {absent[$1]=$3; next}{printf("%s,%s\n", $0, absent[$1]);}' abse
 rm absent.csv
 rm attendance.csv
 
-cat cache.csv | sed 's/_/ /g' > final.csv
+cat cache.csv | sed 's/_/ /g' | sed 's/\L/ L/g'  > final.csv
 rm cache.csv
 
 # Adding header
