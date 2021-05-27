@@ -17,7 +17,7 @@ done;
 # size: 1450x865+1475+40
 cd ..
 
-# Using the wrapper crop.sh to crop the renamed images
+# Cropping the images
 for files in `ls screenshots/`;
 do
 	if [ -z "$1" ]; then

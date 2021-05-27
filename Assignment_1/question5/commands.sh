@@ -67,3 +67,5 @@ rm cache.csv
 # Adding header
 awk -F, 'BEGIN{printf("Roll,Name,Percentage,Missed Lectures\n");}{print $0;}' < final.csv > Attendance.csv
 rm final.csv
+
+echo "Total number of Lecutres = $lectures"
