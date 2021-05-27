@@ -10,7 +10,7 @@ lectures=0;
 for files in `ls transcripts/`;
 do
 	lectures=$(( $lectures+1 ));
-	cat transcripts/$files | grep -oe '^\(.*\)..20b...:' > registered/$(basename $files .sbv).txt
+	cat transcripts/$files | grep -oe '^\(.*\)..[[:digit:]][[:digit:]][[:alpha:]]...:' > registered/$(basename $files .sbv).txt
 done;
 rm -r transcripts/
 
