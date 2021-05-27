@@ -1,8 +1,8 @@
 #!/bin/bash
 
 atomic=$1
-element=`cat AtomicRadii.csv | grep '^32' | sed 's/\t/,/g' | cut -d ',' -f 2`
-key=`cat AtomicRadii.csv | grep '^32' | sed 's/\t/,/g' | cut -d ',' -f 3`
+element=`cat AtomicRadii.csv | sed 's/\t/,/g' | awk -v atomic=$atomic -F, '{if($1==atomic) print $2;}'`
+key=`cat AtomicRadii.csv | sed 's/\t/,/g' | awk -v atomic=$atomic -F, '{if($1==atomic) print $3;}'`
 
 echo "Choosing Element $element with Atomic Number $atomic and Radius $key"
 echo "Criterion is $2% deviation in Atomic Radius from the chosen element"
