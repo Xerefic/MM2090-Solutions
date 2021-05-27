@@ -68,4 +68,12 @@ rm cache.csv
 awk -F, 'BEGIN{printf("Roll,Name,Percentage,Missed Lectures\n");}{print $0;}' < final.csv > Attendance.csv
 rm final.csv
 
+echo
+
 echo "Total number of Lecutres = $lectures"
+
+if [ -z "$1" ]; then
+	echo
+else
+	cat Attendance.csv | grep $1 | gawk -F, '{print "Name: ", $2; print "Roll Number: ", $1; print "Attendance Percentage: ", $3; print "Lectures Missed: ", $4;}'
+fi
