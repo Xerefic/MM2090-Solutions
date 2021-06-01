@@ -17,7 +17,7 @@ list:
 	@find $(pwd) -mtime -$(MODPERIOD) -ls
 
 backup:
-	@rm -f backup$(DATE).tar
+	@rm -f backup-$(DATE).tar
 	@rm -rf ~/backup/backup$(DATE)/
 	@mkdir ~/backup/backup$(DATE)
 	@chmod 777 ~/backup/backup$(DATE)/
