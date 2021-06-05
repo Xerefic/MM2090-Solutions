@@ -17,15 +17,16 @@ list:
 	@find $(pwd) -mtime -$(MODPERIOD) -ls
 
 backup:
+	@#mkdir backup 
 	@rm -f backup-$(DATE).tar
 	@rm -rf ~/backup/backup$(DATE)/
 	@mkdir ~/backup/backup$(DATE)
 	@chmod 777 ~/backup/backup$(DATE)/
 
-	@cp -r `find $(pwd) -mtime -$(MODPERIOD)` ~/backup/backup$(DATE)/
+	@find $(pwd) -mtime -$(MODPERIOD) | xargs cp -r --parents -t ~/backup/backup$(DATE)/
 	@cp -r ~/backup/backup$(DATE)/ ./backup$(DATE)/
 	@rm -r ~/backup/backup$(DATE)/	
 
-	@tar cvfz backup-$(DATE).tar.gz backup$(DATE)/
+	@cd backup$(DATE)/ && tar -zcvf ../backup-$(DATE).tar.gz * && cd - 
 
 	@rm -r ./backup$(DATE)/ 
