@@ -143,11 +143,16 @@ class table():
         table.drop(columns=["Row"], inplace=True)
         return table
 
+    def center(self, table):
+        return table.style.set_table_styles([
+            {"selector": "th", "props": [("text-align", "center")]},
+            {"selector": "td", "props": [("text-align", "right")]}])
+
     def getImage(self):
         table = self.rename()
-        table = table.style.background_gradient()
+        table = self.center(table)
         dataframe_image.export(table, self.name+".png")
-        return
+        return 
 
 tab = table(sys.argv[1])
 tab.getImage()
