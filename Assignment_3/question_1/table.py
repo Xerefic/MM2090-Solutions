@@ -13,6 +13,7 @@ class table():
         self.name = self.getArguments(self.TITLE[0])[0]
 
     def getCommands(self, file_name):
+        # This functions takes in the file and returns a list containg every line of the file
         commands = []
         with open(file_name) as file:
             for line in file:
@@ -20,6 +21,7 @@ class table():
         return commands
 
     def getOperation(self):
+        # This function segregates commands into different lists
         TITLE = []; ROWS = []; SLOTS = []; TIME = []; 
         for line in self.commands:
             if line.find("is-a")!=-1:
@@ -33,6 +35,7 @@ class table():
         return TITLE, ROWS, SLOTS, TIME
     
     def findOperation(self, line):
+        # This function identifies the type of command
         if line.find("is-a")!=-1:
             return ("is-a")
         elif line.find("has-row")!=-1:
@@ -45,17 +48,21 @@ class table():
             return ("ends-at") 
 
     def getArguments(self, line):
+        # This function returns the arguments for each command
         return [ entry.strip() for entry in line.split(self.findOperation(line)) ]
     
     def getColumns(self):
+        # This function returns a dict with the columns of the table as keys 
         header = ["Row"] + [str(time) for time in range(8,17+1)]
         columns = dict( [column, None] for column in header )
         return columns
 
     def makeTime(self):
+        # This function returns a dict with Start and End as keys
         return {"Start": None, "End": None}
 
     def makeRows(self):
+        # This function parses through ROWS and returns the names of the rows
         rows = []
         for line in self.ROWS:
             if self.findOperation(line)=="has-row":
@@ -63,6 +70,7 @@ class table():
         return rows
 
     def getSlots(self):
+        # This function parses through SLOTS and maps each slot to the corresponding row
         rows = dict([[row, []] for row in self.makeRows()])
         for line in self.SLOTS:
             if self.findOperation(line)=="has-slot":
@@ -71,6 +79,7 @@ class table():
         return dict(rows)
 
     def getTime(self):
+        # This function parses through TIME and updates the start and end times for each slot
         data = []
         for line in self.SLOTS:
             if self.findOperation(line)=="has-slot":
@@ -87,6 +96,7 @@ class table():
         return data
 
     def makeTable(self):
+        # This function returns a list of dicts containing the data for each column row-wise
         slots = self.getSlots()
         time = self.getTime()
         table = []
@@ -105,6 +115,7 @@ class table():
         return table
 
     def canOverlap(self, row1, row2):
+        # This function checks if two rows can be merged
         flag=True
         for row in self.contents:
             if row["Row"]==row1:
@@ -119,6 +130,7 @@ class table():
         return flag
 
     def reduce(self):
+        # This function iterates through every pair of rows and checks if they can be merged
         clashes = []
         pairable = []
         rows = self.makeRows()
@@ -149,6 +161,7 @@ class table():
             {"selector": "td", "props": [("text-align", "right")]}])
 
     def getImage(self):
+        # This function converts the table into an image
         table = self.rename()
         table = self.center(table)
         dataframe_image.export(table, self.name+".png")
