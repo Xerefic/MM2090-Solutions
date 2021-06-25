@@ -1,3 +1,5 @@
+# Initializing the State
+
 state = zeros(130,130);
 
 for row = 2:size(state)(1)-1
@@ -10,10 +12,12 @@ for row = 2:size(state)(1)-1
 endfor
 history = state;
 
-imshow(state)
+#imshow(state)
 imwrite(state, "Iteration-0.png")
 
-N = 10^5;
+# Performing the Operations
+
+N = 3*10^5;
 for time = 1:N
     x = floor(rand()*size(state)(1));
     y = floor(rand()*size(state)(2));
@@ -25,8 +29,15 @@ for time = 1:N
             state(x,y)=0;
         endif
     endif
-    if (mod(time,500)==0)
-        name = sprintf("Iteration-%d.png", time);
-        imwrite(state, name);
+    if (time<10000)
+        if (mod(time,100)==0)
+            name = sprintf("Iteration-%d.png", time);
+            imwrite(state, name);
+        endif
+    else
+        if (mod(time,1000)==0)
+            name = sprintf("Iteration-%d.png", time);
+            imwrite(state, name);
+        endif
     endif
 endfor
