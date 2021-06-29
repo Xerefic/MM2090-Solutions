@@ -14,7 +14,7 @@ Consider the following sample images. Visually you can count that the number of 
 Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_2}{GitHub} \footnote{Repo: \url{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_2}}
 
 \subsubsection{Approach}
-I am using the OpenCV\footnote{\url{https://opencv.org/}} library to pre-process the image – converting it to grayscale, and resizing for uniformity. Followed by applying a binary filter to sort the different colours into just two values – 0 and 255. Basically, every value greater than the minimum pixel value +10 is mapped to 255 and the rest to 0. Given that the image contains only two colours, this process will distinguish the two colours in every case. \\
+I am using the OpenCV\footnote{Source: \url{https://opencv.org/}} library to pre-process the image – converting it to grayscale, and resizing for uniformity. Followed by applying a binary filter to sort the different colours into just two values – 0 and 255. Basically, every value greater than the minimum pixel value +10 is mapped to 255 and the rest to 0. Given that the image contains only two colours, this process will distinguish the two colours in every case. \\
 To count the number of objects, I am using the fact that the gradients across the normal to the contours of the said region is non zero and uniform. findContours identifies continuous boundaries of regions having same colour, where the length of countours gives the number of the objects.
 
 
