@@ -1,0 +1,23 @@
+\section{Question 6}
+
+\subsection{Task}
+Consider a transformation by which a function $y_i\left(x_i\right)$ is transformed to another function $m_i\left(c_i\right)$  where $m$ and $c$ are slope and intercept of the original curve at different points on the curve represented by $y$ as function of $x$. The envelope of lines of slope $m$ drawn at each value of $c$ has the same shape as that of the curve drawn using the points $\left(x,y\right)$. This is illustrated a parabola as shown in the figures below. Write a program that converts a function given as $y\left(x\right)$ to the new form either graphically or analytically. Make sure your process works even when the function $y\left(x\right)$ is changed to any other smooth and well-behaved function.
+
+\subsection{Solution}
+
+Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_6}{GitHub}
+
+\subsubsection{Approach}
+Sampling the given function for 50 points in the range $0 \leq x \leq 100$ and representing the said function using a scatter plot. The transformed function is nothing but the set of lines whose slope correspond to the slope of the tangent at a point $\left(x_i,y_i\right)$ on the polynomial. Using the derivative operation in sagemath, I am computing the slope at a point $x_i$ for $x_i \in f(x)$. At a point $x_i$, the modified function is given by $\frac{y-f(x_i)}{x-x_i}=\frac{\partial f(x)}{\partial x}_{x=x_i}$. 
+
+\subsubsection{Requirements}
+Language of choice: sagemath
+\begin{lstlisting}[language=bash]
+	pip3 install numpy
+	pip3 install matplotlib
+	pip3 install pandas
+\end{lstlisting}
+
+\subsubsection{Output}
+
+
