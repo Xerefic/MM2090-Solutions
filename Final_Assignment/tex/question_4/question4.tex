@@ -6,16 +6,16 @@ Simulate the Langton’s ant. Look up Wikipedia about what this problem is. Make
 
 \subsection{Solution}
 
-Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_4}{GitHub}
+Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_4}{GitHub} \footnote{Repo: \url{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_4}}
 
-\subsubsection{Rules}
+\subsubsection{Rules}\footnote{\url{https://en.wikipedia.org/wiki/Langton\%27s_ant}}
 Initialize the state space of dimensions $64*64$ with all 0s, i.e., black pixels. Arbitrarily identify the starting location of the and update according to:
 \begin{itemize}
 	\item At a white square, turn 90° clockwise, flip the colour of the square, move forward one unit,
 	\item At a black square, turn 90° counter-clockwise, flip the colour of the square, move forward one unit.
 \end{itemize}
 
-\subsection{Approach}
+\subsubsection{Approach}
 At every time step, to keep track of the orientation of the ant, I exploited the use of residues of 4. So basically, computed the modulo of \textbf{orient} and 4 after every update. Following which the location of the ant at the start of the $\left(t+1\right)^{th}$ time-step is calculated. Accordingly, the pixels are updated. The states are sampled every so often to observe the actions of the ant.
 
 
@@ -62,4 +62,7 @@ Please find attached the video of the states.
 \caption{Simulation of States}
 \end{table}
 
+\clearpage
+\subsection{Code}
+\lstinputlisting{question_4/question4.py}
 

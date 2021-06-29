@@ -6,10 +6,10 @@ Seam carving is a special image manipulation. Look it up on Wikipedia to underst
 
 \subsection{Solution}
 
-Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_5}{GitHub}
+Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_5}{GitHub} \footnote{Repo: \url{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_5}}
 
 \subsubsection{Approach}
-We compute the energy of the image using gradient magnitude and find the seam with the minimum energy, a line which is connected to the adjacent pixels either via an edge or a corner. We use dynamic programming to keep track of the minimum seam. \\
+We compute the energy of the image using gradient magnitude \footnote{\url{https://en.wikipedia.org/wiki/Image_derivatives}} and find the seam with the minimum energy, a line which is connected to the adjacent pixels either via an edge or a corner. We use dynamic programming to keep track of the minimum seam. \\
 The idea is, if we remove the so calculated minimum seam, the image doesn’t lose important features, but we have successfully decreased the dimensions without resizing image.\\
 This process can be repeated any number of times, to produce an image of desired dimensions.
 
@@ -38,7 +38,7 @@ Language of choice: python
 \end{lstlisting}
 
 \subsubsection{Observation}
-The algorithm is a computationally expensive version to achieve Seam Carving. Since the operations have to be sequential, there is no possibility of using parallel computing realms to speed up the process.\\
+The algorithm\footnote{Inspired By: \url{https://karthikkaranth.me/blog/implementing-seam-carving-with-python/}} is a computationally expensive version to achieve Seam Carving\footnote{\url{https://en.wikipedia.org/wiki/Seam_carving}}. Since the operations have to be sequential, there is no possibility of using parallel computing realms to speed up the process.\\
 NOTE: It took around 25 mins for the first image and over 1 hour for the second image.
 
 \subsubsection{Output}
@@ -59,3 +59,7 @@ NOTE: It took around 25 mins for the first image and over 1 hour for the second 
 	\end{center}
 \caption{Processed Images}
 \end{table}
+
+\clearpage
+\subsection{Code}
+\lstinputlisting{question_5/question5.py}

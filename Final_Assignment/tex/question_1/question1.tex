@@ -1,14 +1,14 @@
 \section{Question 1}
 
 \subsection{Task}
-Generate 10 random numbers $y_i$ between -1 and +1. Use these as points $\left(x_i,y_i\right)$ where $x_i=i$ and show them as a scatter plot. Fit a higher order polynomial over these points to generate a pattern of how a random noise would look like. Sample the polynomial to generate about 100 points in the interval $x_1$ to $x_{10}$. Superpose a plot of this data along with original points $\left(xi,yi\right)$.  Identify the peaks (location and height) programmatically. Print them out and confirm those with the plot.
+Generate 10 random numbers $y_i$ between -1 and +1. Use these as points $\left(x_i,y_i\right)$ where $x_i=i$ and show them as a scatter plot. Fit a higher order polynomial over these points to generate a pattern of how a random noise would look like. Sample the polynomial to generate about 100 points in the interval $x_1$ to $x_{10}$. Superpose a plot of this data along with original points $\left(x_i,y_i\right)$.  Identify the peaks (location and height) programmatically. Print them out and confirm those with the plot.
 
 \subsection{Solution}
 
-Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_1}{GitHub}
+Link to the GitHub repository for this question: \href{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_1}{GitHub} \footnote{Repo: \url{https://github.com/Xerefic/MM2090-Solutions/tree/master/Final_Assignment/question_1}}
 
 \subsubsection{Approach}
-I used the scikit-learn library to generate a polynomial of degree n and used linear regression to fit the polynomial to the given data. Although this polynomial over fits the given data, it is fine as it retains the randomness of generated coordinates. \\
+I used the scikit-learn\footnote{\url{https://scikit-learn.org/stable/}} library to generate a polynomial of degree $n$ and used linear regression to fit the polynomial to the given data. Although this polynomial over fits the given data, it is fine as it retains the randomness of generated coordinates. \\
 To find the extrema, I am traversing through the sampled polynomial and identifying the locations where the polynomial attains local maxima or minima. 
 
 \subsubsection{Requirements}
@@ -46,3 +46,7 @@ Language of choice: python
 	\includegraphics{question_1/Fitted.eps} 
 	\caption{Fitted with Polynomial}
 \end{figure} 
+
+\clearpage
+\subsection{Code}
+\lstinputlisting{question_1/question1.py}
